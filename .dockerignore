@@ -1,0 +1,17 @@
+.git
+.idea
+.vscode
+node_modules
+vendor
+bootstrap/cache/*
+!bootstrap/cache/.gitignore
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/framework/testing/*
+.env
+.env.*
+npm-debug.log
+pnpm-debug.log
+tests
