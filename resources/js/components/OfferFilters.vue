@@ -37,7 +37,11 @@ function countCategory(slug) { return props.items.filter((item) => item.category
       <span class="discovery-filter-label"><Storefront :size="17" /> Categorie</span>
       <div class="discovery-category-scroll">
         <button type="button" :class="{ 'is-active': category === 'all' }" @click="emit('update:category', 'all')"><SquaresFour :size="17" /> Alle categorieën</button>
-        <button v-for="item in pito.categories" :key="item.slug" type="button" :class="{ 'is-active': category === item.slug }" @click="emit('update:category', item.slug)"><component :is="categoryIcons[item.slug] || Storefront" :size="17" /> {{ item.label }} <span class="discovery-filter-count">{{ countCategory(item.slug) }}</span></button>
+        <button v-for="item in pito.categories" :key="item.slug" type="button" :class="{ 'is-active': category === item.slug }" :style="item.color ? { '--category-color': item.color } : {}" @click="emit('update:category', item.slug)">
+          <span v-if="item.icon" class="discovery-category-emoji" aria-hidden="true">{{ item.icon }}</span>
+          <component v-else :is="categoryIcons[item.slug] || Storefront" :size="17" />
+          {{ item.label }} <span class="discovery-filter-count">{{ countCategory(item.slug) }}</span>
+        </button>
       </div>
     </div>
   </div>

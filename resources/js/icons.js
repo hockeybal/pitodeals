@@ -14,6 +14,7 @@ export {
     PhSquaresFour as SquaresFour,
     PhStorefront as Storefront,
     PhStudent as Student,
+    PhTag as Tag,
     PhTicket as Ticket,
     PhUsersThree as UsersThree,
     PhWallet as Wallet,

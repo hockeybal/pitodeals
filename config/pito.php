@@ -4,9 +4,10 @@ return [
     'strapi' => [
         'enabled' => (bool) env('STRAPI_ENABLED', false),
         'url' => rtrim((string) env('STRAPI_URL', ''), '/'),
-        'token' => env('STRAPI_TOKEN'),
-        'content_endpoint' => env('STRAPI_CONTENT_ENDPOINT', '/api/pito-web'),
-        'timeout' => (int) env('STRAPI_TIMEOUT', 5),
+        'token' => env('STRAPI_TOKEN', env('STRAPI_API_TOKEN')),
+        'deals_endpoint' => env('STRAPI_DEALS_ENDPOINT', '/api/deals'),
+        'vacatures_endpoint' => env('STRAPI_VACATURES_ENDPOINT', '/api/vacatures'),
+        'timeout' => (int) env('STRAPI_TIMEOUT', 8),
         'cache_seconds' => (int) env('STRAPI_CACHE_SECONDS', 300),
     ],
     'live_municipalities' => [
